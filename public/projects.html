@@ -18,10 +18,6 @@
     .table thead th { white-space: nowrap; vertical-align: middle; }
     .project-link { text-decoration: none; color: inherit; }
     .project-link:hover { text-decoration: underline; color: #0d6efd; }
-    @media (max-width: 767px) {
-      .table-responsive { font-size: 0.85rem; }
-      .hide-mobile { display: none; }
-    }
   </style>
 </head>
 <body>
@@ -72,25 +68,24 @@
                 <i class="bi bi-arrow-down-up"></i>
               </button>
             </th>
-            <th scope="col" class="hide-mobile">Description</th>
-            <th scope="col" data-col="createdAt" class="hide-mobile">
+            <th scope="col">Description</th>
+            <th scope="col" data-col="createdAt">
               Created
               <button class="sort-btn" aria-label="Sort by Created date">
                 <i class="bi bi-arrow-down-up"></i>
               </button>
             </th>
-            <th scope="col" data-col="updatedAt" class="hide-mobile">
+            <th scope="col" data-col="updatedAt">
               Updated
               <button class="sort-btn" aria-label="Sort by Updated date">
                 <i class="bi bi-arrow-down-up"></i>
               </button>
             </th>
-            <!-- <th scope="col" class="text-end">Actions</th> -->
           </tr>
         </thead>
         <tbody id="projects-tbody">
           <tr>
-            <td colspan="6" class="text-center text-muted py-5">Loading...</td>
+            <td colspan="5" class="text-center text-muted py-5">Loading...</td>
           </tr>
         </tbody>
       </table>
@@ -189,7 +184,7 @@
       `${projects.length} project${projects.length !== 1 ? "s" : ""} total`;
 
     if (projects.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="6" class="text-center text-muted py-5">No projects found.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-5">No projects found.</td></tr>`;
       return;
     }
 
@@ -203,9 +198,9 @@
         <td>
           <a href="project.html?p_id=${p.id}" class="project-link fw-medium">${p.name}</a>
         </td>
-        <td class="text-muted small hide-mobile">${p.description ?? ""}</td>
-        <td class="text-muted small hide-mobile">${formatDate(p.createdAt)}</td>
-        <td class="text-muted small hide-mobile">${formatDate(p.updatedAt)}</td>
+        <td class="text-muted small">${p.description ?? ""}</td>
+        <td class="text-muted small">${formatDate(p.createdAt)}</td>
+        <td class="text-muted small">${formatDate(p.updatedAt)}</td>
       </tr>
     `).join("");
   }
@@ -237,7 +232,7 @@
       applyFilters();
     } catch (err) {
       document.getElementById("projects-tbody").innerHTML =
-        `<tr><td colspan="6" class="text-center text-danger py-5">Failed to load projects.</td></tr>`;
+        `<tr><td colspan="5" class="text-center text-danger py-5">Failed to load projects.</td></tr>`;
     }
   }
 
