@@ -3,6 +3,7 @@ const { PrismaClient } = require("@prisma/client");
 const projectsRouter = require("./routes/projects");
 const requirementsRouter = require("./routes/requirements"); 
 const userStoriesRouter = require("./routes/userStories");
+const acceptanceCriteriaRouter = require("./routes/acceptanceCriteria");
 
 const app = express();
 const prisma = new PrismaClient();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use("/projects", projectsRouter);
 app.use("/projects/:projectId/requirements", requirementsRouter);
 app.use("/projects/:projectId/user-stories", userStoriesRouter); 
+app.use("/projects/:projectId/user-stories/:userStoryId/acceptance-criteria", acceptanceCriteriaRouter);
 
 // ── Diagnostics endpoint ────────────────────────────────────────────────────
 app.get("/diagnostics", async (req, res) => {
