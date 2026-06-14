@@ -1,11 +1,13 @@
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
+const projectsRouter = require("./routes/projects");
 
 const app = express();
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use("/projects", projectsRouter);
 
 // ── Diagnostics endpoint ────────────────────────────────────────────────────
 app.get("/diagnostics", async (req, res) => {
