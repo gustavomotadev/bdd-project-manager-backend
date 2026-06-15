@@ -50,9 +50,10 @@
         }
 
         .bdd-line .bdd-keyword {
-            color: #6c757d;
+            /* color: #6c757d; */
             font-style: italic;
             margin-right: 4px;
+            /* font-weight: bold; */
         }
     </style>
 </head>
@@ -65,17 +66,17 @@
         <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
             <a href="projects.html" class="btn btn-outline-secondary d-flex align-items-center gap-2">
                 <i class="bi bi-arrow-left"></i>
-                Projects
+                Projetos
             </a>
             <div class="ms-auto d-flex gap-2">
                 <button class="btn btn-outline-primary d-flex align-items-center gap-2" data-bs-toggle="modal"
                     data-bs-target="#editProjectModal">
                     <i class="bi bi-pencil"></i>
-                    Edit Project
+                    Editar Projeto
                 </button>
                 <button class="btn btn-outline-danger d-flex align-items-center gap-2" id="btn-delete-project">
                     <i class="bi bi-trash"></i>
-                    Delete Project
+                    Descartar Projeto
                 </button>
             </div>
         </div>
@@ -83,18 +84,18 @@
         <!-- ── Project info ────────────────────────────────────────────────────── -->
         <div class="card border-0 shadow-sm mb-4">
             <div class="card-body py-3" id="project-info">
-                <p class="text-muted py-3 mb-0">Loading...</p>
+                <p class="text-muted py-3 mb-0">Carregando...</p>
             </div>
         </div>
 
         <!-- ── Requirements ───────────────────────────────────────────────────── -->
 
         <div class="d-flex align-items-center justify-content-between mb-3">
-            <h2 class="h5 fw-semibold mb-0">Requirements</h2>
+            <h2 class="h5 fw-semibold mb-0">Requisitos</h2>
             <button class="btn btn-primary btn-sm d-flex align-items-center gap-2" data-bs-toggle="modal"
                 data-bs-target="#newReqModal">
                 <i class="bi bi-plus-lg"></i>
-                New Requirement
+                Novo Requisito
             </button>
         </div>
 
@@ -106,7 +107,7 @@
                         <i class="bi bi-search text-muted"></i>
                     </span>
                     <input type="text" id="req-search" class="form-control border-start-0 ps-0"
-                        placeholder="Search requirements...">
+                        placeholder="Buscar requisitos...">
                 </div>
             </div>
 
@@ -115,47 +116,47 @@
                     <thead class="table-light">
                         <tr>
                             <th scope="col" data-col="code">
-                                Code
+                                Código
                                 <button class="sort-btn req-sort" aria-label="Sort by Code"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Descrição</th>
                             <th scope="col" data-col="isFunctional">
-                                Type
+                                Tipo
                                 <button class="sort-btn req-sort" aria-label="Sort by Type"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="category">
-                                Category
+                                Categoria
                                 <button class="sort-btn req-sort" aria-label="Sort by Category"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="priority">
-                                Priority
+                                Prioridade
                                 <button class="sort-btn req-sort" aria-label="Sort by Priority"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="status">
-                                Status
+                                Estado
                                 <button class="sort-btn req-sort" aria-label="Sort by Status"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="createdAt">
-                                Created
+                                Criado
                                 <button class="sort-btn req-sort" aria-label="Sort by Created"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="updatedAt">
-                                Updated
+                                Modificado
                                 <button class="sort-btn req-sort" aria-label="Sort by Updated"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
-                            <th scope="col" class="text-end">Actions</th>
+                            <th scope="col" class="text-end">Ações</th>
                         </tr>
                     </thead>
                     <tbody id="req-tbody">
                         <tr>
-                            <td colspan="9" class="text-center text-muted py-4">Loading...</td>
+                            <td colspan="9" class="text-center text-muted py-4">Carregando...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -164,11 +165,11 @@
 
         <!-- ── User Stories ────────────────────────────────────────────────────── -->
         <div class="d-flex align-items-center justify-content-between mb-3">
-            <h2 class="h5 fw-semibold mb-0">User Stories</h2>
+            <h2 class="h5 fw-semibold mb-0">Histórias de Usuário</h2>
             <button class="btn btn-primary btn-sm d-flex align-items-center gap-2" data-bs-toggle="modal"
                 data-bs-target="#newStoryModal">
                 <i class="bi bi-plus-lg"></i>
-                New User Story
+                Nova História
             </button>
         </div>
 
@@ -180,7 +181,7 @@
                         <i class="bi bi-search text-muted"></i>
                     </span>
                     <input type="text" id="story-search" class="form-control border-start-0 ps-0"
-                        placeholder="Search user stories...">
+                        placeholder="Buscar histórias...">
                 </div>
             </div>
 
@@ -189,33 +190,33 @@
                     <thead class="table-light">
                         <tr>
                             <th scope="col" data-col="code">
-                                Code
+                                Código
                                 <button class="sort-btn story-sort" aria-label="Sort by Code"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="title">
-                                Title
+                                Título
                                 <button class="sort-btn story-sort" aria-label="Sort by Title"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
-                            <th scope="col">User Story</th>
+                            <th scope="col">História</th>
                             <th scope="col" data-col="priority">
-                                Priority
+                                Prioridade
                                 <button class="sort-btn story-sort" aria-label="Sort by Priority"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="status">
-                                Status
+                                Estado
                                 <button class="sort-btn story-sort" aria-label="Sort by Status"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="createdAt">
-                                Created
+                                Criado
                                 <button class="sort-btn story-sort" aria-label="Sort by Created"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
                             <th scope="col" data-col="updatedAt">
-                                Updated
+                                Modificado
                                 <button class="sort-btn story-sort" aria-label="Sort by Updated"><i
                                         class="bi bi-arrow-down-up"></i></button>
                             </th>
@@ -223,7 +224,7 @@
                     </thead>
                     <tbody id="story-tbody">
                         <tr>
-                            <td colspan="7" class="text-center text-muted py-4">Loading...</td>
+                            <td colspan="7" class="text-center text-muted py-4">Carregando...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -238,29 +239,29 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title fs-5 fw-semibold" id="editProjectModalLabel">Edit Project</h2>
+                    <h2 class="modal-title fs-5 fw-semibold" id="editProjectModalLabel">Editar Projeto</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="edit-project-error" class="alert alert-danger d-none" role="alert"></div>
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Code</label>
+                        <label class="form-label fw-medium">Código</label>
                         <input type="text" class="form-control" id="edit-project-code" maxlength="20" />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-medium">Name <span class="text-danger">*</span></label>
+                        <label class="form-label fw-medium">Nome <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="edit-project-name" />
                     </div>
                     <div class="mb-1">
-                        <label class="form-label fw-medium">Description</label>
+                        <label class="form-label fw-medium">Descrição</label>
                         <textarea class="form-control" id="edit-project-description" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btn-save-project">
                         <i class="bi bi-check-lg"></i>
-                        Save Changes
+                        Salvar Alterações
                     </button>
                 </div>
             </div>
@@ -274,14 +275,13 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <h2 class="modal-title fs-5 fw-semibold text-danger" id="deleteProjectModalLabel">
-                        <i class="bi bi-exclamation-triangle me-2"></i>Delete Project
+                        <i class="bi bi-exclamation-triangle me-2"></i>Descartar Projeto
                     </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-1">You are about to delete <strong id="delete-project-name"></strong>.</p>
-                    <p class="text-muted small mb-0">This will permanently delete the project and all its requirements
-                        and user stories. This cannot be undone.</p>
+                    <p class="mb-1">Você está prestes a descartar o projeto <strong id="delete-project-name"></strong>.</p>
+                    <p class="text-muted small mb-0">Essa ação é <strong>permanente</strong> e destrói o projeto e todo o seu conteúdo. Essa ação não pode ser desfeita.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -300,56 +300,56 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title fs-5 fw-semibold" id="newReqModalLabel">New Requirement</h2>
+                    <h2 class="modal-title fs-5 fw-semibold" id="newReqModalLabel">Novo Requisito</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="new-req-error" class="alert alert-danger d-none" role="alert"></div>
                     <div class="row g-3">
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Code <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="new-req-code" placeholder="e.g. REQ-001"
+                            <label class="form-label fw-medium">Código <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="new-req-code" placeholder="p.ex. REQ-001"
                                 maxlength="20" />
                         </div>
                         <div class="col-12 col-sm-8">
-                            <label class="form-label fw-medium">Type <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Tipo <span class="text-danger">*</span></label>
                             <select class="form-select" id="new-req-functional">
-                                <option value="true">Functional</option>
-                                <option value="false">Non-Functional</option>
+                                <option value="true">Funcional</option>
+                                <option value="false">Não-Funcional</option>
                             </select>
                         </div>
                         <div class="col-12">
-                            <label class="form-label fw-medium">Description <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Descrição <span class="text-danger">*</span></label>
                             <textarea class="form-control" id="new-req-description" rows="3"
-                                placeholder="Describe the requirement..."></textarea>
+                                placeholder="Descrição do requisito"></textarea>
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Category <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="new-req-category" placeholder="e.g. Security" />
+                            <label class="form-label fw-medium">Categoria <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="new-req-category" placeholder="p.ex. Segurança" />
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Priority <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Prioridade <span class="text-danger">*</span></label>
                             <select class="form-select" id="new-req-priority">
-                                <option value="High">High</option>
-                                <option value="Medium" selected>Medium</option>
-                                <option value="Low">Low</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Média" selected>Média</option>
+                                <option value="Baixa">Baixa</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Estado <span class="text-danger">*</span></label>
                             <select class="form-select" id="new-req-status">
-                                <option value="Draft" selected>Draft</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Implemented">Implemented</option>
+                                <option value="Rascunho" selected>Rascunho</option>
+                                <option value="Aprovado">Aprovado</option>
+                                <option value="Implementado">Implementado</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btn-create-req">
                         <i class="bi bi-plus-lg"></i>
-                        Create Requirement
+                        Criar Requisito
                     </button>
                 </div>
             </div>
@@ -361,7 +361,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title fs-5 fw-semibold" id="editReqModalLabel">Edit Requirement</h2>
+                    <h2 class="modal-title fs-5 fw-semibold" id="editReqModalLabel">Editar Requisito</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -369,47 +369,47 @@
                     <input type="hidden" id="edit-req-id" />
                     <div class="row g-3">
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Code <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Código <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="edit-req-code" maxlength="20" />
                         </div>
                         <div class="col-12 col-sm-8">
-                            <label class="form-label fw-medium">Type <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Tipo <span class="text-danger">*</span></label>
                             <select class="form-select" id="edit-req-functional">
-                                <option value="true">Functional</option>
-                                <option value="false">Non-Functional</option>
+                                <option value="true">Funcional</option>
+                                <option value="false">Não-Funcional</option>
                             </select>
                         </div>
                         <div class="col-12">
-                            <label class="form-label fw-medium">Description <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Descrição <span class="text-danger">*</span></label>
                             <textarea class="form-control" id="edit-req-description" rows="3"></textarea>
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Category <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Categoria <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="edit-req-category" />
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Priority <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Prioridade <span class="text-danger">*</span></label>
                             <select class="form-select" id="edit-req-priority">
-                                <option value="High">High</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Low">Low</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Média">Média</option>
+                                <option value="Baixa">Baixa</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Estado <span class="text-danger">*</span></label>
                             <select class="form-select" id="edit-req-status">
-                                <option value="Draft">Draft</option>
-                                <option value="Approved">Approved</option>
-                                <option value="Implemented">Implemented</option>
+                                <option value="Rascunho">Rascunho</option>
+                                <option value="Aprovado">Aprovado</option>
+                                <option value="Implementado">Implementado</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btn-save-req">
                         <i class="bi bi-check-lg"></i>
-                        Save Changes
+                        Salvar Alterações
                     </button>
                 </div>
             </div>
@@ -422,20 +422,20 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <h2 class="modal-title fs-5 fw-semibold text-danger" id="deleteReqModalLabel">
-                        <i class="bi bi-exclamation-triangle me-2"></i>Delete Requirement
+                        <i class="bi bi-exclamation-triangle me-2"></i>Descartar Requisito
                     </h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-1">You are about to delete requirement <strong id="delete-req-code"></strong>.</p>
-                    <p class="text-muted small mb-0">This cannot be undone.</p>
+                    <p class="mb-1">Você está prestes a descartar o requisito <strong id="delete-req-code"></strong>.</p>
+                    <p class="text-muted small mb-0">Essa ação é <strong>permanente</strong> e destrói o requisito. Essa ação não pode ser desfeita.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-danger d-flex align-items-center gap-2"
                         id="btn-confirm-delete-req">
                         <i class="bi bi-trash"></i>
-                        Delete Requirement
+                        Descartar Requisito
                     </button>
                 </div>
             </div>
@@ -447,60 +447,60 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title fs-5 fw-semibold" id="newStoryModalLabel">New User Story</h2>
+                    <h2 class="modal-title fs-5 fw-semibold" id="newStoryModalLabel">Nova História</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="new-story-error" class="alert alert-danger d-none" role="alert"></div>
                     <div class="row g-3">
                         <div class="col-12 col-sm-4">
-                            <label class="form-label fw-medium">Code <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="new-story-code" placeholder="e.g. US-001"
+                            <label class="form-label fw-medium">Código <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="new-story-code" placeholder="p.ex. HU-001"
                                 maxlength="20" />
                         </div>
                         <div class="col-12 col-sm-8">
-                            <label class="form-label fw-medium">Title <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Título <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="new-story-title"
-                                placeholder="e.g. User Login" />
+                                placeholder="p.ex. Login" />
                         </div>
                         <div class="col-12">
-                            <label class="form-label fw-medium">As a… <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Como… <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="new-story-asa"
-                                placeholder="e.g. registered user" />
+                                placeholder="p.ex. usuário registrado" />
                         </div>
                         <div class="col-12">
-                            <label class="form-label fw-medium">I want… <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Quero… <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="new-story-iwant"
-                                placeholder="e.g. to log in with my email and password" />
+                                placeholder="p.ex. acessar o sistema" />
                         </div>
                         <div class="col-12">
-                            <label class="form-label fw-medium">So that… <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Para… <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="new-story-sothat"
-                                placeholder="e.g. I can access my personal dashboard" />
+                                placeholder="p.ex. visualizar meu perfil" />
                         </div>
                         <div class="col-12 col-sm-6">
-                            <label class="form-label fw-medium">Priority <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Prioridade <span class="text-danger">*</span></label>
                             <select class="form-select" id="new-story-priority">
-                                <option value="High">High</option>
-                                <option value="Medium" selected>Medium</option>
-                                <option value="Low">Low</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Média" selected>Média</option>
+                                <option value="Baixa">Baixa</option>
                             </select>
                         </div>
                         <div class="col-12 col-sm-6">
-                            <label class="form-label fw-medium">Status <span class="text-danger">*</span></label>
+                            <label class="form-label fw-medium">Estado <span class="text-danger">*</span></label>
                             <select class="form-select" id="new-story-status">
-                                <option value="Todo" selected>Todo</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Done">Done</option>
+                                <option value="A Fazer" selected>A Fazer</option>
+                                <option value="Em Andamento">Em Andamento</option>
+                                <option value="Concluído">Concluído</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary d-flex align-items-center gap-2" id="btn-create-story">
                         <i class="bi bi-plus-lg"></i>
-                        Create User Story
+                        Criar História
                     </button>
                 </div>
             </div>
@@ -537,12 +537,12 @@
         }
 
         function priorityBadge(p) {
-            const map = { High: "danger", Medium: "warning", Low: "success" };
+            const map = { "Alta": "danger", "Média": "warning", "Baixa": "success" };
             return `<span class="badge text-bg-${map[p] ?? "secondary"}">${p}</span>`;
         }
 
         function statusBadge(s) {
-            const map = { Draft: "secondary", Approved: "primary", Implemented: "success", Todo: "secondary", "In Progress": "warning", Done: "success" };
+            const map = { "Rascunho": "secondary", "Aprovado": "primary", "Implementado": "success", "A Fazer": "secondary", "Em Andamento": "warning", "Concluído": "success" };
             return `<span class="badge text-bg-${map[s] ?? "secondary"}">${s}</span>`;
         }
 
@@ -600,8 +600,8 @@
           <p class="text-muted small mb-0">${currentProject.description ?? "<em>No description.</em>"}</p>
         </div>
         <div class="col-12 col-md-auto text-muted small d-flex flex-column gap-1 align-items-md-end">
-          <span><i class="bi bi-clock me-1"></i>Created: ${formatDate(currentProject.createdAt)}</span>
-          <span><i class="bi bi-arrow-clockwise me-1"></i>Updated: ${formatDate(currentProject.updatedAt)}</span>
+          <span><i class="bi bi-clock me-1"></i>Criado: ${formatDate(currentProject.createdAt)}</span>
+          <span><i class="bi bi-arrow-clockwise me-1"></i>Modificado: ${formatDate(currentProject.updatedAt)}</span>
         </div>
       </div>
     `;
@@ -638,8 +638,8 @@
         <td><span class="badge bg-secondary fw-normal font-monospace">${r.code}</span></td>
         <td class="small">${r.description}</td>
         <td>${r.isFunctional
-                    ? '<span class="badge text-bg-info">Functional</span>'
-                    : '<span class="badge text-bg-secondary">Non-Functional</span>'}</td>
+                    ? '<span class="badge text-bg-info">Funcional</span>'
+                    : '<span class="badge text-bg-secondary">Não-Funcional</span>'}</td>
         <td class="small">${r.category}</td>
         <td>${priorityBadge(r.priority)}</td>
         <td>${statusBadge(r.status)}</td>
@@ -692,9 +692,9 @@
           <a href="story.html?p_id=${projectId}&us_id=${s.id}" class="story-link fw-medium">${s.title}</a>
         </td>
         <td class="bdd-line">
-          <div><span class="bdd-keyword">As a</span>${s.asA}</div>
-          <div><span class="bdd-keyword">I want</span>${s.iWant}</div>
-          <div><span class="bdd-keyword">So that</span>${s.soThat}</div>
+          <div><span class="bdd-keyword text-primary"><strong>Como</strong></span>${s.asA}</div>
+          <div><span class="bdd-keyword text-primary"><strong>Quero</strong></span>${s.iWant}</div>
+          <div><span class="bdd-keyword text-primary"><strong>Para</strong></span>${s.soThat}</div>
         </td>
         <td>${priorityBadge(s.priority)}</td>
         <td>${statusBadge(s.status)}</td>
