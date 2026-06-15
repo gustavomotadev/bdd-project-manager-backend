@@ -343,7 +343,7 @@
         const projectId = Number(params.get("p_id"));
 
         if (!userStoryId || !projectId) {
-            document.body.innerHTML = '<div class="container py-5"><div class="alert alert-danger">Missing project or user story ID in URL.</div></div>';
+            document.body.innerHTML = '<div class="container py-5"><div class="alert alert-danger">Nenhuma história selecionada.</div></div>';
             throw new Error("Missing p_id or us_id");
         }
 
@@ -388,7 +388,7 @@
             const res = await fetch(`/projects/${projectId}/user-stories/${userStoryId}`);
             if (!res.ok) {
                 document.getElementById("story-info").innerHTML =
-                    '<p class="text-danger mb-0">User story not found.</p>';
+                    '<p class="text-danger mb-0">História não encontrada.</p>';
                 return;
             }
 
@@ -450,7 +450,7 @@
                 c.then.toLowerCase().includes(query)
             );
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-4">No acceptance criteria found.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-4">Nenhum critério encontrado.</td></tr>`;
                 return;
             }
 

@@ -147,3 +147,7 @@ vite.config.ts.timestamp-*
 # Database
 
 *.db
+
+# Python virtual environment
+
+venv

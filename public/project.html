@@ -513,7 +513,7 @@
         const projectId = Number(params.get("p_id"));
 
         if (!projectId) {
-            document.body.innerHTML = '<div class="container py-5"><div class="alert alert-danger">No project ID provided in URL.</div></div>';
+            document.body.innerHTML = '<div class="container py-5"><div class="alert alert-danger">Nenhum projeto selecionado.</div></div>';
             throw new Error("No p_id");
         }
 
@@ -585,7 +585,7 @@
             const res = await fetch(`/projects/${projectId}`);
             if (!res.ok) {
                 document.getElementById("project-info").innerHTML =
-                    '<p class="text-danger mb-0">Project not found.</p>';
+                    '<p class="text-danger mb-0">Projeto não encontrado.</p>';
                 return;
             }
             currentProject = await res.json();
@@ -630,7 +630,7 @@
                 r.status.toLowerCase().includes(query)
             );
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="9" class="text-center text-muted py-4">No requirements found.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="9" class="text-center text-muted py-4">Nenhum requisito encontrado.</td></tr>`;
                 return;
             }
             tbody.innerHTML = data.map(r => `
@@ -678,7 +678,7 @@
                 s.status.toLowerCase().includes(query)
             );
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted py-4">No user stories found.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted py-4">Nenhuma história encontrada.</td></tr>`;
                 return;
             }
             tbody.innerHTML = data.map(s => `
