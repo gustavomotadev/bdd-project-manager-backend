@@ -100,15 +100,13 @@
 
         <div class="card border-0 shadow-sm mb-5">
 
-            <div class="card border-0 shadow-sm">
-                <div class="card-header bg-white border-bottom py-3">
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0">
-                            <i class="bi bi-search text-muted"></i>
-                        </span>
-                        <input type="text" id="req-search" class="form-control border-start-0 ps-0"
-                            placeholder="Search requirements...">
-                    </div>
+            <div class="card-header bg-white border-bottom py-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text" id="req-search" class="form-control border-start-0 ps-0"
+                        placeholder="Search requirements...">
                 </div>
             </div>
 
@@ -175,6 +173,17 @@
         </div>
 
         <div class="card border-0 shadow-sm mb-4">
+
+            <div class="card-header bg-white border-bottom py-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text" id="story-search" class="form-control border-start-0 ps-0"
+                        placeholder="Search user stories...">
+                </div>
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                     <thead class="table-light">
@@ -657,10 +666,19 @@
         }
 
         function renderStories() {
+            const query = document.getElementById("story-search").value.toLowerCase();
             const tbody = document.getElementById("story-tbody");
-            const data = sorted(allStories, storySortCol, storySortDir);
+            const data = sorted(allStories, storySortCol, storySortDir).filter(s =>
+                s.code.toLowerCase().includes(query) ||
+                s.title.toLowerCase().includes(query) ||
+                s.asA.toLowerCase().includes(query) ||
+                s.iWant.toLowerCase().includes(query) ||
+                s.soThat.toLowerCase().includes(query) ||
+                s.priority.toLowerCase().includes(query) ||
+                s.status.toLowerCase().includes(query)
+            );
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted py-4">No user stories yet.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted py-4">No user stories found.</td></tr>`;
                 return;
             }
             tbody.innerHTML = data.map(s => `
@@ -933,7 +951,8 @@
         // ── Search ─────────────────────────────────────────────────────────
 
         document.getElementById("req-search").addEventListener("input", renderReqs);
-        
+        document.getElementById("story-search").addEventListener("input", renderStories);
+
         // ── Sort bindings ─────────────────────────────────────────────────────────
 
         bindSortButtons(".req-sort",
