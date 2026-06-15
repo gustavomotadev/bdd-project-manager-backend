@@ -88,6 +88,17 @@
         </div>
 
         <div class="card border-0 shadow-sm mb-4">
+
+            <div class="card-header bg-white border-bottom py-3">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="bi bi-search text-muted"></i>
+                    </span>
+                    <input type="text" id="criterion-search" class="form-control border-start-0 ps-0"
+                        placeholder="Search acceptance criteria...">
+                </div>
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                     <thead class="table-light">
@@ -431,11 +442,16 @@
         }
 
         function renderCriteria() {
+            const query = document.getElementById("criterion-search").value.toLowerCase();
             const tbody = document.getElementById("criterion-tbody");
-            const data = sorted(allCriteria, sortCol, sortDir);
-
+            const data = sorted(allCriteria, sortCol, sortDir).filter(c =>
+                c.title.toLowerCase().includes(query) ||
+                c.given.toLowerCase().includes(query) ||
+                c.when.toLowerCase().includes(query) ||
+                c.then.toLowerCase().includes(query)
+            );
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-4">No acceptance criteria yet.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-4">No acceptance criteria found.</td></tr>`;
                 return;
             }
 
@@ -680,6 +696,10 @@
         document.getElementById("deleteCriterionModal").addEventListener("hidden.bs.modal", () => {
             pendingDeleteCriterionId = null;
         });
+
+        // ── Search ──────────────────────────────────────────────────────────────────
+
+        document.getElementById("criterion-search").addEventListener("input", renderCriteria);
 
         // ── Init ──────────────────────────────────────────────────────────────────
 
