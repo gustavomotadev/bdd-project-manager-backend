@@ -623,12 +623,12 @@
             tbody.innerHTML = data.map(s => `
       <tr>
         <td>
-          <a href="story.html?us_id=${s.id}" class="story-link">
+          <a href="story.html?p_id=${projectId}&us_id=${s.id}" class="story-link">
             <span class="badge bg-secondary fw-normal font-monospace">${s.code}</span>
           </a>
         </td>
         <td>
-          <a href="story.html?us_id=${s.id}" class="story-link fw-medium">${s.title}</a>
+          <a href="story.html?p_id=${projectId}&us_id=${s.id}" class="story-link fw-medium">${s.title}</a>
         </td>
         <td class="bdd-line">
           <div><span class="bdd-keyword">As a</span>${s.asA}</div>
